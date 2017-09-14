@@ -43,9 +43,24 @@ namespace XFP.Pages
                 Navigation.PushAsync(page);
             };
 
-            var button5 = new Button { Text = "" };
+            var button5 = new Button { Text = "Carousel" };
             button5.Clicked += (o, e) =>
             {
+                var page = new CarouselPage
+				{
+					Title = "Courses"
+				};
+
+				foreach (var course in PluralsightCourse.GetCourseList())
+				{
+					var coursePage = new CoursePageDB
+					{
+						BindingContext = course
+					};
+					page.Children.Add(coursePage);
+				}
+
+				Navigation.PushAsync(page);
             };
 
             Content = new StackLayout
