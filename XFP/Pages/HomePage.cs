@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Linq;
 using Xamarin.Forms;
 
 namespace XFP.Pages
@@ -24,9 +20,9 @@ namespace XFP.Pages
             button2.Clicked += (o, e) =>
             {  Navigation.PushAsync(new CourseMasterDetail());};
 
-            var button3 = new Button { Text = "" };
+            var button3 = new Button { Text = "Master/Detail (binding)" };
             button3.Clicked += (o, e) =>
-                {  };
+            {  Navigation.PushAsync(new CourseMasterDetailDB());};
 
             var button4 = new Button { Text = "" };
             button4.Clicked += (o, e) =>
